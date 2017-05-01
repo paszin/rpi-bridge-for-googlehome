@@ -21,7 +21,17 @@ You can probably skip this. But make sure, that you fullfill the following requi
 
 ### Step #1
 ##### add your devices to a database
+We will create a DynamoDB table with the name _MySmartHome_.
 
+Run the following commands from your terminal:
+
+`cd aws_api`
+
+`make table`
+
+Visit https://eu-central-1.console.aws.amazon.com/dynamodb/home?#tables:selected=MySmartHome
+
+Click _Create Item_ and give it a useful id, e.g. _lights_ or _coffeemachine_ 
 
 ### Step #2
 ##### create an endpoint to update your database
