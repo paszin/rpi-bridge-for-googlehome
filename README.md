@@ -18,6 +18,8 @@ You can probably skip this. But make sure, that you fullfill the following requi
 - AWS Account and some experience with lambda, API Gateway and dynamoDB
 - AWS CLI (if not: `pip install --upgrade --user awscli`, and visit http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html#cli-signup)
 
+### Step #0
+`git clone git@github.com:paszin/rpi-bridge-for-googlehome.git`
 
 ### Step #1
 ##### add your devices to a database
