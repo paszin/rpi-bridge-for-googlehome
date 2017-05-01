@@ -10,3 +10,12 @@ Summary:
 
 Setup raspberry pi to send local ip to a webservice (AWS Lambda with DynamoDB). Send Google Home's requests to another webservice that knows to local ip adress and forwards it to the raspberry pi. 
 
+
+- [ ] open port on router
+
+- [ ] send local ip to aws
+
+- [ ] forward incomming request to local ip
+
+- [ ] forward response
+
