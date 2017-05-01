@@ -16,7 +16,7 @@ You can probably skip this. But make sure, that you fullfill the following requi
 
 - Python 2.7
 - AWS Account and some experience with lambda, API Gateway and dynamoDB
-- AWS CLI (if not: `pip install --upgrade --user awscli`)
+- AWS CLI (if not: `pip install --upgrade --user awscli`, and visit http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html#cli-signup)
 
 
 ### Step #1
