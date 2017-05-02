@@ -27,16 +27,24 @@ We will create a DynamoDB table with the name _MySmartHome_.
 
 Run the following commands from your terminal:
 
-`cd aws_api`
+- `cd aws_api`
 
-`make table`
+- `make table`
 
-Visit https://eu-central-1.console.aws.amazon.com/dynamodb/home?#tables:selected=MySmartHome
+- Visit https://eu-central-1.console.aws.amazon.com/dynamodb/home?#tables:selected=MySmartHome
 
-Click _Create Item_ and give it a useful id, e.g. _lights_ or _coffeemachine_ 
+- Click _Create Item_ and give it a useful id, e.g. _lights_ or _coffeemachine_ 
 
 ### Step #2
 ##### create an endpoint to update your database
+
+- `make api`
+
+- copy the returned id
+
+- `export MySmartHome_APIID=THEcopiedID`
+
+- 
 
 
 ### Step #3
