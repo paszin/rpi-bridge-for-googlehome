@@ -17,7 +17,7 @@ functions:
 	--zip-file fileb://lambda/ipreceiver.zip
 	pip install requests -t ./lambda/requester
 	cd lambda/requester;	zip -r ../requester.zip *; cd ../..
-	aws lambda create-function --function-name mysmarthome_iphandler \
+	aws lambda create-function --function-name mysmarthome_requester \
 	--runtime python2.7 \
 	--role $(AWS_ROLE)  \
 	--handler lambda_function.lambda_function \
