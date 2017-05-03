@@ -14,7 +14,7 @@ Setup raspberry pi to send local ip to a webservice (AWS Lambda with DynamoDB). 
 ### Requirements
 You can probably skip this. But make sure, that you fullfill the following requirements.
 
-- Python 2.7
+- Python 2.7 including pip
 - AWS Account and some experience with lambda, API Gateway and dynamoDB
 - AWS CLI (if not: `pip install --upgrade --user awscli`, and visit http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html#cli-signup)
 
@@ -44,7 +44,19 @@ Run the following commands from your terminal:
 
 - `export MySmartHome_APIID=THEcopiedID`
 
-- 
+##### create lambda functions for your endpoints
+
+###### create service role
+
+- visit https://console.aws.amazon.com/iam/home#/roles
+
+- Create a new Role, select AWS Lambda and provide full Access for Lambda. Save the new Role. Copy the Role ARN (should looks like arn:aws:iam::11111155555:role/smarthomerole)
+
+- `export AWS_ROLE=arn:aws:iam::11111155555:role/smarthomerole`
+
+###### create functions
+
+- `make functions`
 
 
 ### Step #3
