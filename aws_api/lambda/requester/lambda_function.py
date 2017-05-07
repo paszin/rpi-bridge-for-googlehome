@@ -15,16 +15,20 @@ def respond(err, res=None):
     }
 
 def lambda_handler(event, context):
+    ''' '''
 
-    tableName = "NyNetworkIp"
-    dynamo = boto3.resource('dynamodb').Table("MyNetworkIp")
-    resp = dynamo.get_item(Key={"id": 0})
-    ip = resp["Item"]["ip"]
-    print("IP:" + ip)
-    internalPort = "62405"
-    endpoint = ""
-    url = "http://" + ip + ":" + internalPort
-    data = json.loads(event['body'])
+    tableName = "MySmartHome"
+    dynamo = boto3.resource("dynamodb").Table(tableName)
+    deviceId = event["pathParameters"].get("deviceId")
+    item = dynamo.get_item(Key={"id": deviceId}).get("Item")
+    if not item:
+        return respond(ValueError("Can not match deviceId"))
+
+    ip = item.get("ip")
+    port = item.get("port")
+    endpoint = item.get("endpoint") or ""
+    url = "http://" + ip + ":" + port + endpoint
+    data = json.loads(event["body"])
     headers = {'content-type': 'application/json'}
     r = requests.post(url, data=json.dumps(data), headers=headers)
 
