@@ -14,7 +14,7 @@ import requests
 
 
 
-MYSMARTHOME_APIURL = "https://lqgvt38ps2.execute-api.eu-central-1.amazonaws.com/dev2" #"https://???????.execute-api.eu-central-1.amazonaws.com/dev/"
+MYSMARTHOME_APIURL = "https://???????.execute-api.eu-central-1.amazonaws.com/dev/"
 MYSMARTHOME_DEVICEID = "lights"
 MYSMARTHOME_PORT = "9000"
 
@@ -47,7 +47,7 @@ while True:
         print "New IP:", data["ip"]
         lastIp = data["ip"]
 
-    if sys.argv[1] == "noloop":
+    if len(sys.argv) > 0 and sys.argv[1] == "noloop":
         break
 
     time.sleep(interval)
