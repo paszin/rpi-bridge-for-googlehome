@@ -122,8 +122,13 @@ In this step we will run a simple local server
 
 - `python simple_server.py` 
 
-*Time for testing!*
+**Time for testing!**
 
+- Open your favorite REST-Client (I recommend Postman)
+
+- Send a POST request to {paste invoke url from the end of step 2}/{deviceid} (e.g. https://abc1312.execute-api.eu-central-1.amazonaws.com/dev/lights) with a payload {"message": "hello world"}
+
+You should see the incoming request in you terminal and get ... as response
 
 
 
@@ -132,13 +137,6 @@ In this step we will run a simple local server
 ##### Integrate Google Home
 
 
-- [ ] open port on router
-
-- [ ] send local ip to aws
-
-- [ ] forward incomming request to local ip
-
-- [ ] forward response
 
 
 ### Contributions Welcome
