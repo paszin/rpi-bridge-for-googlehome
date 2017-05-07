@@ -128,7 +128,12 @@ In this step we will run a simple local server
 
 - Send a POST request to `{paste invoke url from the end of step 2}/devices/{deviceid}/request` (e.g. `https://abc1312.execute-api.eu-central-1.amazonaws.com/dev/devices/lights/request`) with a payload `{"message": "hello world"}`
 
-You should see the incoming request in you terminal and get ... as response
+You should see the incoming request in you terminal and get `{
+  "my_message": "Hello from my Network",
+  "your_message": {
+    "message": "hello world"
+  }
+}` as response
 
 
 
