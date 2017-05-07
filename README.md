@@ -75,6 +75,13 @@ Run the following commands from your terminal:
 
 - select _lambda function_, check _Use proxy integration_ and select _mysmarthome_requester_ as function
 
+- mock end point /devices [TODO: also link to function]
+
+- click _Actions_ and _Deploy API_, create a new stage named _dev_ and deploy. Then copy the invoke URL.
+
+
+Summary until here:
+We created a database and a working api to get and update elements in the table. Furthermore we have an endpoint to forward any request to our local network. Well done so far, take a break!
 
 ### Step #3
 ###### update database from your local device
