@@ -16,32 +16,34 @@ def respond(err, res=None):
 
 def lambda_handler(event, context):
     '''
+    PUT: updates the MySmartHome-Table with a given ip and port
+    GET: returns the ip and port for the specified device
     '''
 
-    tableName = "MyNetworkIp"
-
-    operations = {
-        'DELETE': lambda dynamo, x: dynamo.delete_item(**x),
-        'GET': lambda dynamo, x: dynamo.scan(**x),
-        'POST': lambda dynamo, x: dynamo.put_item(**x),
-        'PUT': lambda dynamo, x: dynamo.update_item(**x),
-    }
-
+    tableName = "MySmartHome"
     dynamo = boto3.resource("dynamodb").Table(tableName)
     operation = event["httpMethod"]
+    deviceId = event["pathParameters"].get("deviceId")
     if operation == "PUT":
         payload = json.loads(event["body"])
         resp = dynamo.update_item(
                             Key={
-                                "id": 0
+                                "id": deviceId
                             },
-                            UpdateExpression="set ip = :val",
+                            UpdateExpression="set ip = :ip, set port = :port",
                             ExpressionAttributeValues={
-                                ":val": payload["ip"] ,
+                                ":ip": payload["ip"],
+                                ":port": payload["port"]
                             },
                             ReturnValues="UPDATED_NEW"
                         )
         return respond(None, resp)
+
+    elif operation == "GET":
+        resp = dynamo.get_item(Key={
+            "id": deviceId
+        })
+        return respond(None, resp.get("Item"))
 
     else:
         return respond(ValueError('Unsupported method "{}"'.format(operation)))
