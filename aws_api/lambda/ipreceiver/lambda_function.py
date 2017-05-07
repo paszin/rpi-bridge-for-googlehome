@@ -30,7 +30,7 @@ def lambda_handler(event, context):
                             Key={
                                 "id": deviceId
                             },
-                            UpdateExpression="set ip = :ip, set port = :port",
+                            UpdateExpression="SET ip = :ip, port = :port",
                             ExpressionAttributeValues={
                                 ":ip": payload["ip"],
                                 ":port": payload["port"]
