@@ -88,7 +88,7 @@ We created a database and a working api to get and update elements in the table.
 
 You can do the steps from your local computer, or directly ssh to your raspberry pi
 
-###### router configuration
+###### open port in router settings
 
 This step depends on the router you use. Search for "open port on {insert router name here}"
 
@@ -105,30 +105,31 @@ This step depends on the router you use. Search for "open port on {insert router
 
 - `export MYSMARTHOME_PORT=9000` (should be the same as in the step before)
 
-- `export MYSMARTHOME_DEVICEID=lights (should be the same as in the database, see step#1) 
+- `export MYSMARTHOME_DEVICEID=lights` (should be the same as in the database, see step#1) 
 
 - `python ipsaver.py noloop` (Without the noloop parameter, the script will update the ip continuosly)  
 
 If you don't want to store your configuration in enviroment variables, you could also store them directly in psaver.py`
-
-
-
-
-
-
-
-
+(For your production version run the script without the noloop parameter in the background. This will update you local ip adress in the database everytime it changes)
 
 
 ### Step #4
 ##### create an endpoint to access your local device
 
+In this step we will run a simple local server
 
-##### open port in router settings
+- `pip install flask`
+
+- `python simple_server.py` 
+
+*Time for testing!*
 
 
 
 
+### Step #5
+
+##### Integrate Google Home
 
 
 - [ ] open port on router
