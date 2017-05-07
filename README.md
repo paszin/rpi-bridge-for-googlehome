@@ -58,6 +58,23 @@ Run the following commands from your terminal:
 
 - `make functions`
 
+###### link functions to api gateway
+
+- visit https://eu-central-1.console.aws.amazon.com/apigateway/home
+
+
+- click on _MySMartHome_ to see your API (all functions should be unlinked so far)
+
+- under _Resources_ select _/{deviceid} and click _Set It Up Now_
+
+- select _lambda function_, check _Use proxy integration_ and select _mysmarthome_iphandler_ as function
+
+- repeat these steps, so you have the same setup for the PUT and the GET-Method
+
+- under _Resources_ select _/{deviceid}/request and click _Set It Up Now_
+
+- select _lambda function_, check _Use proxy integration_ and select _mysmarthome_requester_ as function
+
 
 ### Step #3
 ###### update database from your local device
@@ -81,3 +98,6 @@ Run the following commands from your terminal:
 
 - [ ] forward response
 
+
+### Contributions Welcome
+If you know how to automate or simplify a step, or other improvements, feel free to make a pull request.
