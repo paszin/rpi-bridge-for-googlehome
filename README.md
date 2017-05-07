@@ -6,6 +6,7 @@ This is a guide for everyone who wants to connect Google Home to a local network
 
 My use case is talk to google home to control my raspberry pi controlled LEDs.
 
+If want to hook up any other service like amazons Alexa or IFTTT this guide is also for you. Just skip the Google Home specific part.
 
 ### Summary
 
@@ -81,16 +82,49 @@ Run the following commands from your terminal:
 
 
 Summary until here:
-We created a database and a working api to get and update elements in the table. Furthermore we have an endpoint to forward any request to our local network. Well done so far, take a break!
+We created a database and a working api to get and update elements in the table. Furthermore we have an endpoint to forward any request to our local network. Well done so far, take a break! In the next steps we will focus on setting up your local device (could be anything that supports python and has wifi of course).
 
 ### Step #3
+
+You can do the steps from your local computer, or directly ssh to your raspberry pi
+
+###### router configuration
+
+This step depends on the router you use. Search for "open port on {insert router name here}"
+
+- Select your SmartHome Device and open port 9000 (or any other port, but we will use 9000 in the following steps)
+
 ###### update database from your local device
+
+
+- `cd ../local_device` 
+
+- `pip install requests`
+
+- `export MYSMARTHOME_APIURL={paste invoke url from the end of step 2}`
+
+- `export MYSMARTHOME_PORT=9000` (should be the same as in the step before)
+
+- `export MYSMARTHOME_DEVICEID=lights (should be the same as in the database, see step#1) 
+
+- `python ipsaver.py noloop` (Without the noloop parameter, the script will update the ip continuosly)  
+
+If you don't want to store your configuration in enviroment variables, you could also store them directly in psaver.py`
+
+
+
+
+
+
+
+
 
 
 ### Step #4
 ##### create an endpoint to access your local device
 
 
+##### open port in router settings
 
 
 
