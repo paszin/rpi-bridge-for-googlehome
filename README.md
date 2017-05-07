@@ -126,7 +126,7 @@ In this step we will run a simple local server
 
 - Open your favorite REST-Client (I recommend Postman)
 
-- Send a POST request to {paste invoke url from the end of step 2}/{deviceid} (e.g. https://abc1312.execute-api.eu-central-1.amazonaws.com/dev/lights) with a payload {"message": "hello world"}
+- Send a POST request to `{paste invoke url from the end of step 2}/{deviceid}/request` (e.g. `https://abc1312.execute-api.eu-central-1.amazonaws.com/dev/lights/request`) with a payload `{"message": "hello world"}`
 
 You should see the incoming request in you terminal and get ... as response
 
