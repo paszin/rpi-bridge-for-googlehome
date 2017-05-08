@@ -158,7 +158,13 @@ These are the offical introduction. (You don't need Node.js for this project)
 
 - `make preview`
 
+- `python google_home_server.py`
+
 - visit https://developers.google.com/actions/tools/web-simulator and type "Talk to my smart lights"
+
+**DONE**
+
+
  
 
 
