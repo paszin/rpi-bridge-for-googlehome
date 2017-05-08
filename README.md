@@ -157,6 +157,8 @@ These are the offical introduction. (You don't need Node.js for this project)
 - open action.json and replace {paste url here} with `{paste invoke url from the end of step 2}/devices/{deviceid}/request` (e.g. `https://abc1312.execute-api.eu-central-1.amazonaws.com/dev/devices/lights/request`) 
 
 - `make preview`
+
+- visit https://developers.google.com/actions/tools/web-simulator and type "Talk to my smart lights"
  
 
 
