@@ -1,0 +1,32 @@
+{
+  "versionLabel": "My Smart Home",
+  "agentInfo": {
+    "languageCode": "en-US",
+    "projectId": "mysmarthome_xxxxxxx",
+    "voiceName": "female_1"
+  },
+  "actions": [
+    {
+      "description": "Launch intent",
+      "initialTrigger": {
+        "intent": "assistant.intent.action.MAIN"
+      },
+      "httpExecution": {
+        "url": "{paste url here}"
+      }
+    },
+    {
+      "description": "trigger command",
+      "initialTrigger": {
+        "intent": "MYINTENT",
+        "queryPatterns": [
+          {
+            "queryPattern": "$SchemaOrg_Text"
+          }        ]
+      },
+      "httpExecution": {
+        "url": "{paste url here}"
+      }
+    }
+  ]
+}
