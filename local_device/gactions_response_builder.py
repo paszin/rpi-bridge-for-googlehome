@@ -2,6 +2,9 @@
 ## Resources: https://developers.google.com/actions/reference/conversation#http-response
 
 
+def extractText(data):
+    return data["inputs"][0]["raw_inputs"][0]["query"]
+
 class GResponse:
 
     def __init__(self, conversation_token="", \
@@ -24,7 +27,7 @@ class GResponse:
                 {"input_prompt": {}, \
                  "possible_intents": [{"intent": "assistant.intent.action.TEXT"}]\
                  }]
-            
+
             resp["expected_inputs"][0]["input_prompt"] = {
                         "initial_prompts": [
                           {"text_to_speech": self.text_to_speech}
@@ -32,12 +35,12 @@ class GResponse:
                          "no_input_prompts" : [
                   {"text_to_speech": s} for s in self.no_input_prompts]
                         }
-          
+
         return resp
-        
+
 
     def __repr__(self):
-                                
+
         return str(self._build_response())
 
     def getJson(self):
