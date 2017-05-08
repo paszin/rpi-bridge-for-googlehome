@@ -141,6 +141,9 @@ You should see the incoming request in you terminal and get `{
 
 ##### Integrate Google Home
 
+Before you continue have a look at https://developers.google.com/actions/develop/sdk/
+
+
 
 
 
