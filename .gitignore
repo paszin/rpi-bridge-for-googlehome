@@ -1,7 +1,8 @@
 *.zip
+*.pyc
+
 gactions
 local_device/action.json
 
 aws_api/lambda/requester/requests/*
-
 aws_api/lambda/requester/requests*
