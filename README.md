@@ -142,7 +142,22 @@ You should see the incoming request in you terminal and get `{
 ##### Integrate Google Home
 
 Before you continue have a look at https://developers.google.com/actions/develop/sdk/
+These are the offical introduction. (You don't need Node.js for this project)
 
+- visit https://developers.google.com/actions/tools/gactions-cli and download gactions cli tool. Put it in the root folder of this project
+
+- `cd ` to root folder
+
+- type `./gactions --help` to verify that your cli is working (do not forget chmod +x if you are using unix)
+
+- `cd local_device`
+
+- `cp action.template.json action.json`
+
+- open action.json and replace {paste url here} with `{paste invoke url from the end of step 2}/devices/{deviceid}/request` (e.g. `https://abc1312.execute-api.eu-central-1.amazonaws.com/dev/devices/lights/request`) 
+
+- `make preview`
+ 
 
 
 
